@@ -1,0 +1,596 @@
+.pageWrapper {
+  min-height: 100vh;
+  background: #F8F5E9;
+}
+
+/* Hero Section with Background Image */
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+  background-image: url('/icons/BLOCK 5 - 1 - Các thành phần kinh tế – nơi tay & óc cùng phát triển.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Gradient Overlay - Pastel Colors */
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(234, 166, 77, 0.75) 0%,
+    rgba(170, 84, 134, 0.7) 50%,
+    rgba(13, 94, 166, 0.75) 100%
+  );
+  backdrop-filter: blur(2px);
+}
+
+/* Hero Content */
+.heroContent {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.header {
+  color: white;
+}
+
+.blockLabel {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin: 0 0 25px 0;
+  font-family: var(--font-be-vietnam-pro), 'Be Vietnam Pro', 'Segoe UI', 'Roboto', sans-serif;
+  text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
+  color: white;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 0;
+  opacity: 0.95;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  font-family: var(--font-be-vietnam-pro), 'Be Vietnam Pro', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.8;
+  background: white;
+  position: relative;
+  z-index: 1;
+}
+
+.section {
+  background: white;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  margin-top: -80px;
+  position: relative;
+  z-index: 10;
+}
+
+.intro {
+  margin-bottom: 40px;
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(234, 166, 77, 0.1) 0%, rgba(13, 94, 166, 0.1) 100%);
+  border-left: 5px solid #EAA64D;
+  border-radius: 12px;
+}
+
+.intro h2 {
+  font-size: 1.5rem;
+  color: #0D5EA6;
+  margin: 0 0 15px 0;
+  font-family: var(--font-be-vietnam-pro), 'Be Vietnam Pro', 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.intro p {
+  font-size: 1.15rem;
+  color: #2B2B2B;
+  margin-bottom: 15px;
+  line-height: 1.9;
+}
+
+.intro p:last-child {
+  margin-bottom: 0;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  margin: 30px 0;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.table thead {
+  background: linear-gradient(135deg, #0D5EA6 0%, #AA5486 100%);
+  color: white;
+}
+
+.table th {
+  padding: 18px 15px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 1.1rem;
+  font-family: var(--font-be-vietnam-pro), 'Be Vietnam Pro', 'Segoe UI', 'Roboto', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+
+.table td {
+  padding: 18px 15px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 1.05rem;
+  color: #2B2B2B;
+  vertical-align: middle;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Column hover effect - highlight đậm hơn khi hover */
+.columnHovered {
+  z-index: 5 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+}
+
+/* Column 1 - Thành phần */
+.table th.columnHovered:nth-child(1) {
+  background: linear-gradient(135deg, #0D5EA6 0%, #0a4d8a 100%) !important;
+  box-shadow: 0 4px 15px rgba(13, 94, 166, 0.4) !important;
+  color: white !important;
+}
+
+.table td.columnHovered:nth-child(1) {
+  background: linear-gradient(135deg, rgba(13, 94, 166, 0.25) 0%, rgba(13, 94, 166, 0.15) 100%) !important;
+  border-left: 4px solid #0D5EA6 !important;
+  border-right: 4px solid #0D5EA6 !important;
+  box-shadow: inset 0 0 10px rgba(13, 94, 166, 0.1) !important;
+  font-weight: 600 !important;
+}
+
+/* Column 2 - Lao động chân tay */
+.table th.columnHovered:nth-child(2) {
+  background: linear-gradient(135deg, #EAA64D 0%, #d8933a 100%) !important;
+  box-shadow: 0 4px 15px rgba(234, 166, 77, 0.4) !important;
+  color: white !important;
+}
+
+.table td.columnHovered:nth-child(2) {
+  background: linear-gradient(135deg, rgba(234, 166, 77, 0.25) 0%, rgba(234, 166, 77, 0.15) 100%) !important;
+  border-left: 4px solid #EAA64D !important;
+  border-right: 4px solid #EAA64D !important;
+  box-shadow: inset 0 0 10px rgba(234, 166, 77, 0.1) !important;
+  font-weight: 600 !important;
+}
+
+/* Column 3 - Lao động trí óc */
+.table th.columnHovered:nth-child(3) {
+  background: linear-gradient(135deg, #AA5486 0%, #8d436f 100%) !important;
+  box-shadow: 0 4px 15px rgba(170, 84, 134, 0.4) !important;
+  color: white !important;
+}
+
+.table td.columnHovered:nth-child(3) {
+  background: linear-gradient(135deg, rgba(170, 84, 134, 0.25) 0%, rgba(170, 84, 134, 0.15) 100%) !important;
+  border-left: 4px solid #AA5486 !important;
+  border-right: 4px solid #AA5486 !important;
+  box-shadow: inset 0 0 10px rgba(170, 84, 134, 0.1) !important;
+  font-weight: 600 !important;
+}
+
+/* Column 4 - Ví dụ */
+.table th.columnHovered:nth-child(4) {
+  background: linear-gradient(135deg, #AA5486 0%, #0D5EA6 100%) !important;
+  box-shadow: 0 4px 15px rgba(170, 84, 134, 0.4) !important;
+  color: white !important;
+}
+
+.table td.columnHovered:nth-child(4) {
+  background: linear-gradient(135deg, rgba(13, 94, 166, 0.25) 0%, rgba(170, 84, 134, 0.25) 100%) !important;
+  border-left: 4px solid #AA5486 !important;
+  border-right: 4px solid #0D5EA6 !important;
+  box-shadow: inset 0 0 10px rgba(170, 84, 134, 0.1) !important;
+  font-weight: 600 !important;
+}
+
+.tableIcon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #0D5EA6;
+}
+
+.tableIcon svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.tableCellContent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cellIcon {
+  color: #EAA64D;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.table tbody tr:hover {
+  background: linear-gradient(135deg, rgba(234, 166, 77, 0.05) 0%, rgba(13, 94, 166, 0.05) 100%);
+  transform: scale(1.01);
+  transition: all 0.2s ease;
+}
+
+.table tbody tr:nth-child(odd) {
+  background: rgba(248, 249, 250, 0.5);
+}
+
+.quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #2B2B2B;
+  background: linear-gradient(135deg, rgba(13, 94, 166, 0.08) 0%, rgba(170, 84, 134, 0.08) 100%);
+  border-left: 5px solid #0D5EA6;
+  padding: 30px 40px;
+  margin: 40px 0;
+  line-height: 1.9;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.quote::before {
+  content: '"';
+  font-size: 4rem;
+  font-family: Georgia, serif;
+  color: #EAA64D;
+  opacity: 0.3;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  line-height: 1;
+}
+
+/* Value Chain Section */
+.valueChainSection {
+  margin-top: 50px;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(234, 166, 77, 0.05) 0%, rgba(170, 84, 134, 0.05) 50%, rgba(13, 94, 166, 0.05) 100%);
+  border-radius: 20px;
+  border: 2px solid rgba(234, 166, 77, 0.2);
+}
+
+.valueChainTitle {
+  font-size: 2rem;
+  color: #0D5EA6;
+  margin: 0 0 15px 0;
+  font-family: var(--font-be-vietnam-pro), 'Be Vietnam Pro', 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  justify-content: center;
+}
+
+.valueChainDesc {
+  text-align: center;
+  font-size: 1.15rem;
+  color: #2B2B2B;
+  margin: 0 0 40px 0;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* Timeline Container */
+.valueChainTimeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Timeline Stage */
+.timelineStage {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 25px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 2;
+}
+
+.timelineStage:hover {
+  transform: translateX(8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Stage Icon */
+.stageIcon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 32px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.timelineStage:hover .stageIcon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Stage Content */
+.stageContent {
+  flex: 1;
+}
+
+.stageContent h4 {
+  font-size: 1.4rem;
+  color: #0D5EA6;
+  margin: 0 0 15px 0;
+  font-weight: 700;
+  font-family: var(--font-be-vietnam-pro), 'Be Vietnam Pro', sans-serif;
+}
+
+.stageDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.laborType {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 1rem;
+  color: #2B2B2B;
+  padding: 8px 12px;
+  background: rgba(234, 166, 77, 0.08);
+  border-radius: 8px;
+  border-left: 3px solid #EAA64D;
+}
+
+.laborType svg {
+  margin-top: 2px;
+  flex-shrink: 0;
+  color: #EAA64D;
+  font-size: 16px;
+}
+
+.laborType strong {
+  color: #0D5EA6;
+  margin-right: 4px;
+}
+
+.stageExample {
+  font-size: 1.05rem;
+  color: #AA5486;
+  font-weight: 600;
+  padding: 10px 15px;
+  background: linear-gradient(135deg, rgba(170, 84, 134, 0.1) 0%, rgba(234, 166, 77, 0.1) 100%);
+  border-radius: 8px;
+  margin-top: 5px;
+  border-left: 3px solid #AA5486;
+}
+
+/* Timeline Connector */
+.timelineConnector {
+  width: 3px;
+  height: 25px;
+  background: linear-gradient(180deg, #EAA64D 0%, #AA5486 50%, #0D5EA6 100%);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+/* Value Chain Summary */
+.valueChainSummary {
+  margin-top: 40px;
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(13, 94, 166, 0.1) 0%, rgba(170, 84, 134, 0.1) 100%);
+  border-radius: 16px;
+  border-left: 5px solid #0D5EA6;
+}
+
+.summaryQuote {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #2B2B2B;
+  margin: 0;
+  line-height: 1.9;
+  text-align: center;
+}
+
+.summaryQuote strong {
+  color: #0D5EA6;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    min-height: 60vh;
+    background-attachment: scroll;
+  }
+
+  .heroContent {
+    padding: 60px 20px;
+  }
+
+  .blockLabel {
+    font-size: 0.85rem;
+    padding: 6px 15px;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .container {
+    padding: 30px 15px;
+  }
+
+  .section {
+    padding: 30px 20px;
+    margin-top: -40px;
+  }
+
+  .intro {
+    padding: 25px 20px;
+  }
+
+  .quote {
+    padding: 25px 30px;
+    font-size: 1.05rem;
+  }
+
+  .table {
+    font-size: 0.9rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 12px 8px;
+    font-size: 0.85rem;
+  }
+
+  .tableIcon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .cellIcon {
+    font-size: 14px;
+  }
+
+  .tableCellContent {
+    gap: 6px;
+  }
+
+  /* Value Chain Responsive */
+  .valueChainSection {
+    padding: 25px 20px;
+  }
+
+  .valueChainTitle {
+    font-size: 1.4rem;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .valueChainDesc {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .timelineStage {
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .timelineStage:hover {
+    transform: translateY(-4px);
+  }
+
+  .stageIcon {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    margin: 0 auto;
+  }
+
+  .stageContent h4 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .laborType {
+    font-size: 0.95rem;
+    padding: 8px 10px;
+  }
+
+  .stageExample {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+
+  .timelineConnector {
+    height: 20px;
+  }
+
+  .valueChainSummary {
+    padding: 25px 20px;
+  }
+
+  .summaryQuote {
+    font-size: 1.05rem;
+  }
+}

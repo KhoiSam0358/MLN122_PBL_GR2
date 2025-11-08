@@ -1,0 +1,171 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: var(--font-nunito), 'Georgia', serif;
+  line-height: 1.8;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #F7931E 0%, #F7931E 100%);
+  color: white;
+  border-radius: 12px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  font-style: italic;
+  margin: 0;
+  opacity: 0.95;
+}
+
+.section {
+  background: white;
+  padding: 60px 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.comingSoon {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.icon {
+  font-size: 5rem;
+  margin-bottom: 30px;
+  animation: bounce 2s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #F7931E;
+}
+
+.icon svg {
+  width: 80px;
+  height: 80px;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.comingSoon h2 {
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+.comingSoon p {
+  font-size: 1.15rem;
+  color: #666;
+  margin-bottom: 15px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comingSoon strong {
+  color: #F7931E;
+  font-size: 1.3rem;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.features > * {
+  opacity: 0;
+}
+
+.feature {
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #fff9e6 0%, #ffe6cc 100%);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+}
+
+.featureIcon {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  color: #F7931E;
+}
+
+.featureIcon svg {
+  width: 48px;
+  height: 48px;
+}
+
+.feature p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 40px 25px;
+  }
+
+  .icon svg {
+    width: 60px;
+    height: 60px;
+  }
+
+  .featureIcon svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .comingSoon h2 {
+    font-size: 1.5rem;
+  }
+
+  .comingSoon p {
+    font-size: 1rem;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

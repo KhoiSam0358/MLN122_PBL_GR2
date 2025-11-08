@@ -1,0 +1,503 @@
+.homeWrapper {
+  width: 100%;
+  min-height: 100vh;
+  overflow: visible;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  padding: 10px 0;
+}
+
+/* Video Hero Banner */
+.videoContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.heroVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Ensure video maintains aspect ratio on all devices */
+@media (max-aspect-ratio: 16/9) {
+  .heroVideo {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+  }
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .heroVideo {
+    width: auto;
+    height: 100%;
+    min-width: 100%;
+  }
+}
+
+.videoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(19, 42, 74, 0.7) 0%,
+    rgba(10, 25, 41, 0.6) 30%,
+    rgba(5, 13, 25, 0.7) 70%,
+    rgba(19, 42, 74, 0.6) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.main {
+  max-width: 900px;
+  width: 75%;
+  margin: 0 auto;
+  padding: 40px 20px 40px 20px;
+  font-family: var(--font-be-vietnam-pro), 'Be Vietnam Pro', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  max-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom Scrollbar for main - Compact & Minimal */
+.main::-webkit-scrollbar {
+  width: 4px; /* Thu gọn từ 8px xuống 4px */
+}
+
+.main::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02); /* Mờ hơn */
+  border-radius: 4px;
+}
+
+.main::-webkit-scrollbar-thumb {
+  background: rgba(234, 166, 77, 0.3);
+  border-radius: 4px;
+}
+
+.main::-webkit-scrollbar-thumb:hover {
+  background: rgba(234, 166, 77, 0.6);
+}
+
+/* Firefox scrollbar styling */
+.main {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(234, 166, 77, 0.3) rgba(255, 255, 255, 0.02);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 20px 24px;
+  color: white;
+  background: linear-gradient(135deg, rgba(13, 94, 166, 0.15) 0%, rgba(170, 84, 134, 0.1) 100%);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin: 0 0 12px 0;
+  font-family: var(--font-be-vietnam-pro), 'Be Vietnam Pro', 'Segoe UI', 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #ffffff 0%, #EAA64D 50%, #0D5EA6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  line-height: 1.3;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 4px 20px rgba(234, 166, 77, 0.4));
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: 0;
+  opacity: 0.92;
+  font-style: italic;
+  color: rgba(234, 166, 77, 0.95);
+  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.9),
+               0 0 20px rgba(13, 94, 166, 0.5);
+  letter-spacing: 0.3px;
+  position: relative;
+  z-index: 1;
+}
+
+.heroSection {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(234, 166, 77, 0.08) 50%, rgba(13, 94, 166, 0.08) 100%);
+  border-radius: 20px;
+  padding: 18px 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5),
+              0 0 60px rgba(234, 166, 77, 0.15),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  max-height: calc(100vh - 240px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  flex-shrink: 0;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.heroSection:hover {
+  transform: translateY(-5px) scale(1.01);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(234, 166, 77, 0.12) 50%, rgba(13, 94, 166, 0.12) 100%);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6),
+              0 0 80px rgba(234, 166, 77, 0.25),
+              0 0 100px rgba(170, 84, 134, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Custom Scrollbar for heroSection - Compact & Minimal */
+.heroSection::-webkit-scrollbar {
+  width: 4px; /* Thu gọn từ 8px xuống 4px */
+}
+
+.heroSection::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03); /* Mờ hơn */
+  border-radius: 4px;
+  margin: 4px 0;
+}
+
+.heroSection::-webkit-scrollbar-thumb {
+  background: rgba(234, 166, 77, 0.4); /* Đơn giản hơn, không dùng gradient */
+  border-radius: 4px;
+  border: none; /* Bỏ border để gọn hơn */
+}
+
+.heroSection::-webkit-scrollbar-thumb:hover {
+  background: rgba(234, 166, 77, 0.7);
+  box-shadow: 0 0 6px rgba(234, 166, 77, 0.3); /* Giảm shadow */
+}
+
+/* Firefox scrollbar styling */
+.heroSection {
+  scrollbar-width: thin; /* Thin scrollbar cho Firefox */
+  scrollbar-color: rgba(234, 166, 77, 0.4) rgba(255, 255, 255, 0.03);
+}
+
+.content {
+  margin-top: 12px;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.content p {
+  font-size: 0.95rem;
+  color: rgba(248, 245, 233, 0.98);
+  margin-bottom: 10px; /* Giảm khoảng cách giữa các paragraph */
+  text-align: justify;
+  line-height: 1.65;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+.content p:last-of-type {
+  margin-bottom: 0; /* Paragraph cuối không có margin dưới */
+}
+
+.content p:first-child {
+  margin-top: 0; /* Paragraph đầu không có margin trên */
+}
+
+.content strong {
+  color: #EAA64D;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(234, 166, 77, 0.5),
+               1px 1px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.3px;
+}
+
+
+.quote {
+  background: linear-gradient(135deg, rgba(13, 94, 166, 0.2) 0%, rgba(170, 84, 134, 0.15) 100%);
+  border-left: 4px solid #EAA64D;
+  padding: 10px 16px; /* Tối ưu padding để vừa vặn */
+  margin: 10px 0; /* Giảm margin để gọn hơn */
+  font-style: italic;
+  font-size: 0.95rem;
+  color: rgba(248, 245, 233, 0.98);
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  line-height: 1.65;
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+/* Quote đầu tiên (ngoài content) không có margin-top */
+.heroSection > .quote:first-child {
+  margin-top: 0;
+}
+
+/* Quote trong content, nếu là phần tử cuối thì không có margin-bottom */
+.content > .quote:last-child {
+  margin-bottom: 0;
+}
+
+.quote:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5),
+              0 0 30px rgba(234, 166, 77, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  border-left-color: rgba(234, 166, 77, 1);
+}
+
+/* Large Desktop */
+@media (min-width: 1441px) {
+  .main {
+    padding: 50px 20px 50px 20px;
+    max-height: 100vh;
+    max-width: 1000px;
+    width: 70%;
+  }
+
+  .heroSection {
+    max-height: calc(100vh - 280px);
+  }
+
+  .title {
+    font-size: 3.2rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+/* Standard Desktop */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .main {
+    padding: 45px 20px 45px 20px;
+    max-height: 100vh;
+    width: 72%;
+  }
+
+  .heroSection {
+    max-height: calc(100vh - 260px);
+    padding: 16px 22px;
+  }
+
+  .title {
+    font-size: 2.6rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+  }
+}
+
+/* Tablet Landscape & Small Desktop */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main {
+    padding: 40px 16px 40px 16px;
+    max-height: 100vh;
+    width: 80%;
+  }
+
+  .heroSection {
+    max-height: calc(100vh - 240px);
+    padding: 22px 28px;
+  }
+
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .content p {
+    font-size: 0.9rem;
+  }
+
+  .quote {
+    font-size: 0.88rem;
+    padding: 12px 16px;
+  }
+}
+
+/* Tablet Portrait */
+@media (max-width: 768px) {
+  .page {
+    padding: 5px 0;
+  }
+
+  .main {
+    padding: 35px 14px 35px 14px;
+    max-height: 100vh;
+    overflow-y: auto;
+    width: 85%;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .header {
+    margin-bottom: 16px;
+    padding: 14px 18px;
+  }
+
+  .heroSection {
+    padding: 16px 18px;
+    max-height: calc(100vh - 300px);
+    border-radius: 16px;
+    overflow-y: auto;
+  }
+
+  .content p {
+    font-size: 0.88rem;
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+
+  .quote {
+    font-size: 0.86rem;
+    padding: 10px 14px;
+    margin: 10px 0;
+  }
+
+  /* Video optimization for mobile */
+  .heroVideo {
+    object-position: center center;
+  }
+
+  .videoOverlay {
+    background: linear-gradient(
+      135deg,
+      rgba(19, 42, 74, 0.8) 0%,
+      rgba(10, 25, 41, 0.75) 30%,
+      rgba(5, 13, 25, 0.8) 70%,
+      rgba(19, 42, 74, 0.75) 100%
+    );
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 30px 12px 30px 12px;
+    max-height: 100vh;
+    overflow-y: auto;
+    width: 90%;
+  }
+
+  .title {
+    font-size: 1.65rem;
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    font-size: 0.88rem;
+  }
+
+  .header {
+    padding: 12px 14px;
+    margin-bottom: 14px;
+  }
+
+  .heroSection {
+    padding: 14px 16px;
+    max-height: calc(100vh - 280px);
+    border-radius: 14px;
+    overflow-y: auto;
+  }
+
+  .content p {
+    font-size: 0.82rem;
+    margin-bottom: 8px;
+    line-height: 1.55;
+  }
+
+  .quote {
+    font-size: 0.82rem;
+    padding: 8px 12px;
+    margin: 8px 0;
+  }
+
+  /* Video optimization for mobile */
+  .heroVideo {
+    object-position: center center;
+  }
+
+  .videoOverlay {
+    background: linear-gradient(
+      135deg,
+      rgba(19, 42, 74, 0.8) 0%,
+      rgba(10, 25, 41, 0.75) 30%,
+      rgba(5, 13, 25, 0.8) 70%,
+      rgba(19, 42, 74, 0.75) 100%
+    );
+  }
+}

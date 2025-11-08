@@ -1,0 +1,207 @@
+/* Shared Animation Classes for All Pages */
+
+/* Slide Up Animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide Down Animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide Left Animation */
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide Right Animation */
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Scale In Animation */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animation Classes */
+.animateSlideUp {
+  animation: slideUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animateSlideDown {
+  animation: slideDown 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animateSlideLeft {
+  animation: slideLeft 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animateSlideRight {
+  animation: slideRight 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animateFadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animateScaleIn {
+  animation: scaleIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* Delay Classes */
+.delay100 {
+  animation-delay: 0.1s;
+}
+
+.delay200 {
+  animation-delay: 0.2s;
+}
+
+.delay300 {
+  animation-delay: 0.3s;
+}
+
+.delay400 {
+  animation-delay: 0.4s;
+}
+
+.delay500 {
+  animation-delay: 0.5s;
+}
+
+.delay600 {
+  animation-delay: 0.6s;
+}
+
+.delay700 {
+  animation-delay: 0.7s;
+}
+
+.delay800 {
+  animation-delay: 0.8s;
+}
+
+/* Stagger animations for children - automatically applies delay based on child index */
+.staggerChildren > * {
+  opacity: 0;
+}
+
+.staggerChildren > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.staggerChildren > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.staggerChildren > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.staggerChildren > *:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.staggerChildren > *:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.staggerChildren > *:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.staggerChildren > *:nth-child(7) {
+  animation-delay: 0.7s;
+}
+
+.staggerChildren > *:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+.staggerChildren > *:nth-child(9) {
+  animation-delay: 0.9s;
+}
+
+.staggerChildren > *:nth-child(10) {
+  animation-delay: 1.0s;
+}
+
+/* Scroll-triggered animations */
+@media (prefers-reduced-motion: no-preference) {
+  .onScroll {
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .onScroll.visible {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animateSlideUp,
+  .animateSlideDown,
+  .animateSlideLeft,
+  .animateSlideRight,
+  .animateFadeIn,
+  .animateScaleIn {
+    animation: none;
+    opacity: 1;
+  }
+}
+
