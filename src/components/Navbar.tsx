@@ -253,20 +253,30 @@ const Navbar = () => {
         onCancel={() => setIsQRModalOpen(false)}
         footer={null}
         centered
+        width={400}
       >
         <div style={{ textAlign: 'center', padding: '20px' }}>
           <div style={{ 
-            width: '200px', 
-            height: '200px', 
-            backgroundColor: '#f0f0f0',
-            margin: '0 auto',
+            width: '256px', 
+            height: '256px', 
+            margin: '0 auto 20px',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            backgroundColor: '#fff'
           }}>
-            <QrcodeOutlined style={{ fontSize: '120px', color: '#999' }} />
+            <img 
+              src="https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=https://mln-122-pbl-gr-2.vercel.app"
+              alt="QR Code"
+              style={{ width: '100%', height: '100%' }}
+            />
           </div>
-          <p style={{ marginTop: '20px' }}>Quét mã QR để xem demo trên điện thoại</p>
+          <p style={{ marginTop: '15px', fontSize: '16px', fontWeight: '600', color: '#2B2B2B' }}>
+            Quét mã QR để xem trên điện thoại
+          </p>
+          <p style={{ marginTop: '10px', fontSize: '14px', color: '#666' }}>
+            mln-122-pbl-gr-2.vercel.app
+          </p>
         </div>
       </Modal>
     </>
