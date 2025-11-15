@@ -11,14 +11,12 @@ import styles from './Navbar.module.css';
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const [isGameModalOpen, setIsGameModalOpen] = useState(false);
   const [isQRModalOpen, setIsQRModalOpen] = useState(false);
 
   const mainMenuItems = [
     { label: 'Home', href: '/' },
     { label: 'Theory', href: '/theory' },
     { label: 'Value Map', href: '/value-map' },
-    { label: 'Game', href: '/game' },
     { label: 'Message', href: '/message' },
   ];
 
@@ -43,10 +41,6 @@ const Navbar = () => {
 
   const handleVideoModal = () => {
     setIsVideoModalOpen(true);
-  };
-
-  const handleGameModal = () => {
-    setIsGameModalOpen(true);
   };
 
   const handleQRModal = () => {
@@ -98,10 +92,10 @@ const Navbar = () => {
           {/* CTA Buttons */}
           <div className={styles.ctaContainer}>
             <Tooltip title="Thử trải nghiệm: 5 vòng, 1 phút">
-              <button onClick={handleGameModal} className={styles.ctaButtonPrimary1}>
+              <Link href="/game" className={styles.ctaButtonPrimary1}>
                 <PlayCircleOutlined className={styles.ctaIcon} />
                 <span className={styles.ctaText}>Play Career Flow</span>
-              </button>
+              </Link>
             </Tooltip>
             
             <Tooltip title="Xem video 60s giới thiệu dự án">
@@ -172,15 +166,13 @@ const Navbar = () => {
               </li>
               
               <li>
-                <button
-                  onClick={() => {
-                    handleGameModal();
-                    setIsMobileMenuOpen(false);
-                  }}
+                <Link
+                  href="/game"
                   className={styles.mobileCTAButton}
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <PlayCircleOutlined /> Play Career Flow
-                </button>
+                </Link>
               </li>
               <li>
                 <button
@@ -220,29 +212,26 @@ const Navbar = () => {
         open={isVideoModalOpen}
         onCancel={() => setIsVideoModalOpen(false)}
         footer={null}
-        width={800}
-        centered
-      >
-        <div style={{ aspectRatio: '16/9', backgroundColor: '#000' }}>
-          {/* Replace with actual video embed */}
-          <p style={{ color: '#fff', textAlign: 'center', paddingTop: '20%' }}>
-            Video intro 60s sẽ được hiển thị ở đây
-          </p>
-        </div>
-      </Modal>
-
-      {/* Game Modal */}
-      <Modal
-        title="Career Flow Game"
-        open={isGameModalOpen}
-        onCancel={() => setIsGameModalOpen(false)}
-        footer={null}
         width={900}
         centered
       >
-        <div style={{ minHeight: '400px', textAlign: 'center', padding: '40px' }}>
-          <p>Game Career Flow sẽ được hiển thị ở đây</p>
-          <p>5 vòng, 1 phút</p>
+        <div style={{ aspectRatio: '16/9', backgroundColor: '#000', position: 'relative' }}>
+          <video 
+            controls 
+            autoPlay
+            preload="metadata"
+            style={{ 
+              width: '100%', 
+              height: '100%', 
+              objectFit: 'contain' 
+            }}
+          >
+            <source 
+              src="https://video-mln122.s3.ap-southeast-1.amazonaws.com/mln122+video.mp4" 
+              type="video/mp4" 
+            />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </Modal>
 
