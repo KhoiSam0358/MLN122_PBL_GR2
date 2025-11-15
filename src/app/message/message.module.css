@@ -104,10 +104,6 @@
   padding-left: 0;
 }
 
-.references ul > * {
-  opacity: 0;
-}
-
 .references li {
   padding: 15px 20px;
   margin-bottom: 12px;

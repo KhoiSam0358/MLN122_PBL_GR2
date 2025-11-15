@@ -6,7 +6,7 @@ import animStyles from '../shared-animations.module.css';
 
 export default function MessagePage() {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} suppressHydrationWarning>
       <header className={styles.header}>
         <h1 className={`${styles.title} ${animStyles.animateSlideDown} ${animStyles.delay100}`}>
           Hands & Minds – Sức mạnh của con người trong nền kinh tế tri thức
@@ -40,14 +40,14 @@ export default function MessagePage() {
 
         <div className={`${styles.references} ${animStyles.animateSlideUp} ${animStyles.delay600}`}>
           <h2>Tài liệu tham khảo</h2>
-          <ul className={`${animStyles.staggerChildren}`}>
-            <li className={animStyles.animateSlideLeft}>C. Mác, <em>Tư bản</em> (Quyển I–III)</li>
-            <li className={animStyles.animateSlideLeft}>C. Mác, <em>Phê phán cương lĩnh Gotha</em>, 1875</li>
-            <li className={animStyles.animateSlideLeft}>C. Mác, <em>Grundrisse</em>, 1857–1858</li>
-            <li className={animStyles.animateSlideLeft}>V.I. Lênin, <em>Toàn tập</em>, Tập 39, NXB Sự thật</li>
-            <li className={animStyles.animateSlideLeft}>Báo cáo thường niên FPT 2024</li>
-            <li className={animStyles.animateSlideLeft}>Báo cáo phát triển bền vững Vingroup 2023</li>
-            <li className={animStyles.animateSlideLeft}>Hiệp hội Dệt may Việt Nam (VITAS), 2023</li>
+          <ul>
+            <li>C. Mác, <em>Tư bản</em> (Quyển I–III)</li>
+            <li>C. Mác, <em>Phê phán cương lĩnh Gotha</em>, 1875</li>
+            <li>C. Mác, <em>Grundrisse</em>, 1857–1858</li>
+            <li>V.I. Lênin, <em>Toàn tập</em>, Tập 39, NXB Sự thật</li>
+            <li>Báo cáo thường niên FPT 2024</li>
+            <li>Báo cáo phát triển bền vững Vingroup 2023</li>
+            <li>Hiệp hội Dệt may Việt Nam (VITAS), 2023</li>
           </ul>
         </div>
       </section>
